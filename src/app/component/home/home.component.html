@@ -1,0 +1,64 @@
+<div class="headerContainer">
+    <div class="content">
+      <div class="logoContainer">
+        <img src="/assets/logo.png"/>
+      </div>
+        <div class="searcBarContainer">
+            <input type="text" placeholder="search any movie"/>
+            <img src="/assets/searchIcon.png" alt="search">
+            <div class="spinner">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="home">
+    <div class="coverContainer">
+        <a href=""><img src="/assets/cover.png" alt=""></a>
+      <!-- <Link >
+        <img src="" />
+      </Link> -->
+    </div>
+  </div>
+
+<div class="mainCntr">
+    <Header>
+      <!-- <Home> -->
+        <div class="trendingContainer">
+            <div class="trnding">
+                <div class="headingContainer">
+                    <div class="trendingHeading">
+                        <h1>Trending</h1>
+                    </div>
+                    <div>
+                        <button>Sort by rating</button>
+                        <div class="rating">
+                            <button>High to Low</button>
+                            <button >Low to High</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cardsContainer">
+                    <div class="movieList">
+                        <div class="linktag" *ngFor="let movie of movies[1]">
+                            <div class="card" >
+                                <!-- <img src="{imageBaseUrl + data.backdrop_path}" alt=""/> -->
+                                <img src="/assets/thor.webp" alt="">
+                                <div class="cardInfo">
+                                    <div class="leftinfo">
+                                        <h2>{{movie.original_title}}</h2>
+                                    </div>
+                                </div>
+                                <div class="rightinfo">
+                                    <img src="" alt="img"/>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <!-- </Home> -->
+    </Header>
+</div>
+
