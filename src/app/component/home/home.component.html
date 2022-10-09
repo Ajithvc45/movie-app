@@ -40,10 +40,11 @@
                 </div>
                 <div class="cardsContainer">
                     <div class="movieList">
-                        <div class="linktag" *ngFor="let movie of movies[1]">
+                        <div class="linktag" *ngFor="let movie of movies[1]" (click)="showMovie(movie)">
                             <div class="card" >
                                 <!-- <img src="{imageBaseUrl + data.backdrop_path}" alt=""/> -->
-                                <img src="/assets/thor.webp" alt="">
+                                <!-- <img [src]=[movie.full_path] alt="poster"> -->
+                                <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="">
                                 <div class="cardInfo">
                                     <div class="leftinfo">
                                         <h2>{{movie.original_title}}</h2>

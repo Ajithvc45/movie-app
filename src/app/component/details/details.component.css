@@ -1,0 +1,224 @@
+.movieCard {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%; 
+  }
+
+  .movieCard img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      width: 100%;
+      height: 100vh;
+    }
+  
+  .overLay {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.8);
+    color: #f1f1f1;
+    height: 100%;
+    width: 100%;
+  }
+  .movieInfo {
+    color: #ffff;
+    width: 70%;
+    /* height: 400px; */
+    top: 0;
+    display: flex;
+    margin-top: 50px;
+    margin-left: 40px;
+    flex-direction: column;
+    font-family: "Helvetica Neue LT Pro", sans-serif;
+  }
+
+  .movieInfo #relsDate {
+    margin-left: 50px;
+  }
+
+  .overLay p {
+    margin: 10px;
+    display: flex;
+    flex-wrap: break-word;
+    font-family: "Helvetica Neue LT Pro", sans-serif;
+    letter-spacing: 1.5px;
+    margin-right: 50px;
+  }
+
+  .overLay h1 {
+    font-family: "Helvetica Neue LT Pro", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 50px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .movieInfo p {
+    font-family: "Helvetica Neue LT Pro", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffff;
+    letter-spacing: 1px;
+  }
+
+  p span {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+
+    color: #ffffff;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .movieInfo {
+      width: 100%;
+    }
+
+    .movieInfo h1 {
+        font-size: 1.2rem;
+      }
+
+      .movieInfo p {
+        font-size: 0.8rem;
+      }
+
+      .movieInfo button {
+        width: 100px;
+        height: 30px;
+        font-size: 0.6rem;
+        padding: 2px;
+        margin-left: 10px;
+      }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .movieInfo {
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .movieInfo h1 {
+        font-size: 1.2rem;
+      }
+
+      .movieInfo p {
+        font-size: 0.8rem;
+      }
+
+      .movieInfo button {
+        width: 100px;
+        height: 30px;
+        font-size: 0.6rem;
+        padding: 2px;
+        margin-left: 10px;
+      }
+  }
+  @media only screen and (max-width: 425px) {
+    .movieInfo {
+      width: 100%;
+      margin: 0px;  
+    }
+
+    .movieInfo h1 {
+        font-size: 1.2rem;
+        margin: 0px;
+      }
+
+      .movieInfo p {
+        font-size: 0.8rem;
+        margin-bottom: 1px;
+        margin-top: 0.5px;
+      }
+
+      .movieInfo button {
+        width: 100px;
+        height: 30px;
+        font-size: 0.6rem;
+        padding: 2px;
+        margin-left: 10px;
+        height: 33px;
+        margin-top: 2px;
+      }
+
+      .movieInfo #date {
+        margin-top: 0px;
+      }
+
+      .movieInfo a {
+        margin: 0px;
+      }
+  }
+  
+  .Paginat {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  
+  .MuiPagination-root {
+    margin-bottom: 20px !important;
+  }
+  .css-19micn4-MuiButtonBase-root-MuiPaginationItem-root {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+  .css-19micn4-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    background-color: #000000 !important;
+    color: red !important;
+  }
+  
+  .playTrailerButton {
+    width: 170px;
+    background-color: #161b24;
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 40px;
+    outline: none;
+    border: 1px solid;
+  
+    /* box-shadow: 2px 3px #09db9c; */
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .vidplay {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+  
+    margin-left: 15%;
+    width: 70%;
+    height: 600px;
+    
+  }
+
+  .vidplay button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #161b24;
+      position: absolute;
+      top: 0;
+      margin-left: 90%;
+      margin-top: 1%;
+      width: 50px;
+      height: 30px;
+      color: #ffffff;
+      cursor: pointer;
+    }
