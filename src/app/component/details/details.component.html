@@ -13,19 +13,19 @@
               /> -->
               <button>X</button>
             </div>
-         
+            <img src="" alt="">
             <div class="movieInfo">
               <a href="">
                 <!-- <KeyboardBackspaceIcon style={{ color: "#ffff" }} /> -->
               </a>
-              <h1>title</h1>
-              <p>Rating: 4</p>
-              <p>overview: </p>
+              <h1>title: {{movieData.title}}</h1>
+              <p>Rating: {{movieData.vote_average}}</p>
+              <p>overview: {{movieData.overview}}</p>
               <p id="date">
-                Release Date:<span id="relsDate">01/02/1234</span>
+                Release Date:<span id="relsDate">{{movieData.release_date}}</span>
               </p>
               <p id="date">
-                Orignal Language:
+                Orignal Language:{{movieData.original_language}}
                 <span id="relsDate"></span>
               </p>
               <button class="playTrailerButton" >

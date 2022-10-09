@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     this.movieService.getMovies().subscribe((movie) => {
       this.movies = Object.values(movie)
       // itemImageUrl = '../assets/phone.png';
-      this.full_path = "https://image.tmdb.org/t/p/w500/" + this.poster_path;
+      // this.full_path = "https://image.tmdb.org/t/p/w500/" + this.poster_path;
       console.log(this.movies);
     });
   }
