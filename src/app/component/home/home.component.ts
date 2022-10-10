@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Movie } from 'Movie';
 import { MoviesService } from 'src/app/movies.service';
 import { Router } from '@angular/router';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   
 
-  constructor(private movieService:MoviesService, private router:Router) { }
+  constructor(private movieService:MoviesService, private router:Router, private active:ActivatedRoute) { }
   movies: any = [];
   full_path: any;
   poster_path:any;
