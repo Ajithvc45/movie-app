@@ -11,14 +11,14 @@
                 muted
                 height="800px"
               /> -->
-              <button>X</button>
+              <button (click)="backward()">X</button>
             </div>
-            <img src="" alt="">
+            <!-- <img class="posterImg" src="https://image.tmdb.org/t/p/w500/{{movieData.poster_path}}" alt=""> -->
             <div class="movieInfo">
               <a href="">
                 <!-- <KeyboardBackspaceIcon style={{ color: "#ffff" }} /> -->
               </a>
-              <h1>title: {{movieData.title}}</h1>
+              <h1>Title: {{movieData.title}}</h1>
               <p>Rating: {{movieData.vote_average}}</p>
               <p>overview: {{movieData.overview}}</p>
               <p id="date">

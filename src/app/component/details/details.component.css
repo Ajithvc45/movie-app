@@ -37,7 +37,7 @@
   }
 
   .movieInfo #relsDate {
-    margin-left: 50px;
+    /* margin-left: 50px; */
   }
 
   .overLay p {
@@ -79,6 +79,10 @@
     align-items: center;
 
     color: #ffffff;
+  }
+
+  .posterImg {
+    
   }
   
   @media only screen and (max-width: 600px) {

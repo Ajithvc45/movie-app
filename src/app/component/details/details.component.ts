@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from 'src/app/movies.service';
+import { Router } from '@angular/router';
 import { Movie } from 'Movie';
 
 @Component({
@@ -12,7 +13,7 @@ export class DetailsComponent implements OnInit {
   // movieData = new Movie('','')
   movieData: any = [];
 
-  constructor(private movieService:MoviesService) { }
+  constructor(private movieService:MoviesService, private router:Router) { }
 
   ngOnInit(): void {
     let id = localStorage.getItem('details');
@@ -20,6 +21,11 @@ export class DetailsComponent implements OnInit {
     this.movieService.singleMovie(id).subscribe((data)=>{
     this.movieData=JSON.parse(JSON.stringify(data));
     })
+  }
+
+  backward() {
+    localStorage.removeItem('details')
+    this.router.navigate(['']);
   }
 
 }
