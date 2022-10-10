@@ -213,6 +213,7 @@
   }
 
   .vidplay button {
+    /* width: 100px; */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -225,4 +226,9 @@
       height: 30px;
       color: #ffffff;
       cursor: pointer;
+      font-size: 30px;
+    }
+
+    .vidplay button span {
+      padding-bottom: 10px;
     }
