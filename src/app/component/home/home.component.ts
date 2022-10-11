@@ -25,21 +25,26 @@ export class HomeComponent implements OnInit {
   findMovie = "";
   // page = "";
   list: any;
-  page:number = 0;
+  page:number = 1;
   totalItems: any;
   itemsPerPage: any;
 
   ngOnInit(): void {
-    this.movieService.getMovies().subscribe((movie) => {
+    this.movieService.getMovies(this.page).subscribe((movie) => {
       this.movies = Object.values(movie)
+      this.page =  0
       // this.movies = movie.data.data;
       // this.totalItems = movie.data.total;
-      console.log(this.movies);
+      console.log('this.movies 1111', this.movies);
     });
 
-    this.active.paramMap.subscribe((params: ParamMap) => {
-      console.log('---------------- ', params.get('id'));
-    })
+    // this.active.paramMap.subscribe((params: ParamMap) => {
+    //   console.log('---------------- ', params.get('id'));
+    // })
+
+    // this.gty(this.page)
+
+
   }
 
   showMovie(movie:any) {
@@ -55,14 +60,21 @@ export class HomeComponent implements OnInit {
   }
 
   gty(page:any) {
-    this.movieService.getPage(page).subscribe((data:any)=> {
-      // this.movies=JSON.parse(JSON.stringify(data));
-      this.list = data.data.data;
-      this.page = page;
-      console.log(this.page);
-      console.log(this.movies);
-      console.log(this.list)
-    })
+    this.page = page
+    this.movieService.getMovies(page).subscribe((movie) => {
+      this.movies = Object.values(movie)
+      // this.movies = movie.data.data;
+      // this.totalItems = movie.data.total;
+      console.log('this.movies 222222222', this.movies);
+    });
+    // this.movieService.getPage(page).subscribe((data:any)=> {
+    //   // this.movies=JSON.parse(JSON.stringify(data));
+    //   this.list = data.data.data;
+    //   this.page = page;
+    //   console.log(this.page);
+    //   console.log(this.movies);
+    //   console.log(this.list)
+    // })
   }
 
 }
