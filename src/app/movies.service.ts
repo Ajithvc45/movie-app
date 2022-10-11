@@ -28,7 +28,7 @@ export class MoviesService {
     return this.http.get<Movie[]>(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=2c7d2e78869ec86ee78d10bc69e698c9&language=en-US`);
   }
 
-  getPage(page:any) {
+  getPage(page:any): Observable<Movie[]> {
     console.log(page)
     return this.http.get<Movie[]>(`https://api.themoviedb.org/3/movie/popular?api_key=2c7d2e78869ec86ee78d10bc69e698c9&page=${page}`);
   }

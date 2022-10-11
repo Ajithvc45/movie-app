@@ -56,10 +56,12 @@ export class HomeComponent implements OnInit {
 
   gty(page:any) {
     this.movieService.getPage(page).subscribe((data:any)=> {
+      // this.movies=JSON.parse(JSON.stringify(data));
       this.list = data.data.data;
       this.page = page;
-      console.log(this.page)
-      // console.log(this.list)
+      console.log(this.page);
+      console.log(this.movies);
+      console.log(this.list)
     })
   }
 
