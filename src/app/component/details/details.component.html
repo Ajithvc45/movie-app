@@ -28,9 +28,23 @@
                 Orignal Language:{{movieData.original_language}}
                 <span id="relsDate"></span>
               </p>
-              <button class="playTrailerButton" >
+              <!-- <button class="playTrailerButton" >
                 Play the trailer
-              </button>
+              </button> -->
+              <div class="modal-container">
+                <input id="modal-toggle" type="checkbox">
+                <button>Play the trailer</button>
+                <div class="modal-backdrop">
+                  <div class="modal-content">
+                    <img src="https://image.tmdb.org/t/p/w500/{{movieData.poster_path}}" alt="">
+                    <label class="modal-close" for="modal-toggle">x</label>
+                    <!-- <h2>Modal title</h2> -->
+                    <!-- <hr /> -->
+                    <!-- <p>Modal Content</p> -->
+                    <!-- <label class="modal-close button" for="modal-toggle">Close</label> -->
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
       </div>
