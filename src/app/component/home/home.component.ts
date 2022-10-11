@@ -10,7 +10,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   
-
+  collection = [];
+  
   constructor(
     private movieService:MoviesService, 
     private router:Router, 
@@ -22,6 +23,11 @@ export class HomeComponent implements OnInit {
   poster_path:any;
   id = " "
   findMovie = "";
+  // page = "";
+  list: any;
+  page:number = 0;
+  totalItems: any;
+  itemsPerPage: any;
 
   ngOnInit(): void {
     this.movieService.getMovies().subscribe((movie) => {
@@ -44,6 +50,15 @@ export class HomeComponent implements OnInit {
     this.movies = Object.values(movie)
     console.log(this.findMovie);
     });
+  }
+
+  gty(page:any) {
+    this.movieService.getPage(page).subscribe((data:any)=> {
+      this.list = data.data.data;
+      this.page = page;
+      console.log(this.page)
+      // console.log(this.list)
+    })
   }
 
 }

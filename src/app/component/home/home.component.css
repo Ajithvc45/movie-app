@@ -39,7 +39,7 @@
   }
 
   .searcBarContainer input {
-      height: 20px;
+      /* height: 20px; */
       outline: 0ch;
       padding: 10px;
       font-size: 1.1rem;
@@ -236,4 +236,18 @@
 
     h4 {
         color: red;
+    }
+
+    .pagination {
+      background-color: rgba(12, 17, 27, 1);
+      display: flex;
+      justify-content: center;
+    }
+
+    .pagination pagination-controls {
+      color: white;
+    }
+
+    .pagination li a {
+      padding: 5px;
     }

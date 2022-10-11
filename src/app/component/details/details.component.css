@@ -59,6 +59,10 @@
     align-items: flex-end;
   }
 
+  .indMovie {
+    /* width: 100%; */
+  }
+
   .movieInfo p {
     font-family: "Helvetica Neue LT Pro", sans-serif;
     font-style: normal;
@@ -347,5 +351,5 @@
     }
 
     .vidplay button span {
-      padding-bottom: 10px;
+      /* padding-bottom: 10px; */
     }

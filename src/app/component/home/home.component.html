@@ -40,7 +40,12 @@
                 </div>
                 <div class="cardsContainer">
                     <div class="movieList">
-                        <div class="linktag" *ngFor="let movie of movies[1]" (click)="showMovie(movie)">
+                        <div class="linktag" *ngFor="let movie of movies[1] | paginate
+                        : {
+                            itemsPerPage: itemsPerPage,
+                            currentPage: page,
+                            totalItems: totalItems
+                          }" (click)="showMovie(movie)">
                             <div class="card" >
                                 <!-- <img src="{imageBaseUrl + data.backdrop_path}" alt=""/> -->
                                 <!-- <img [src]=[movie.full_path] alt="poster"> -->
@@ -56,8 +61,20 @@
                             </div>                            
                         </div>
                     </div>
+                    <!-- <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item"><a class="page-link">Next</a></li>
+                        </ul>
+                    </nav> -->
                 </div>
             </div>
+        </div>
+        <div class="pagination">
+            <pagination-controls (pageChange)="gty((page = $event))"></pagination-controls>
         </div>
       <!-- </Home> -->
     </Header>

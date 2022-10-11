@@ -7,7 +7,7 @@ import { Movie } from 'Movie';
   providedIn: 'root'
 })
 export class MoviesService {
-  private apiUrl = "https://api.themoviedb.org/3/movie/popular?api_key=2c7d2e78869ec86ee78d10bc69e698c9&page=1"
+  private apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=2c7d2e78869ec86ee78d10bc69e698c9&page=1`;
 
   constructor(private http:HttpClient) { }
 
@@ -26,5 +26,10 @@ export class MoviesService {
   getVideo(id:any): Observable<Movie[]> {
     console.log(id)
     return this.http.get<Movie[]>(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=2c7d2e78869ec86ee78d10bc69e698c9&language=en-US`);
+  }
+
+  getPage(page:any) {
+    console.log(page)
+    return this.http.get<Movie[]>(`https://api.themoviedb.org/3/movie/popular?api_key=2c7d2e78869ec86ee78d10bc69e698c9&page=${page}`);
   }
 }
