@@ -21,8 +21,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.movieService.getMovies().subscribe((movie) => {
       this.movies = Object.values(movie)
-      // itemImageUrl = '../assets/phone.png';
-      // this.full_path = "https://image.tmdb.org/t/p/w500/" + this.poster_path;
       console.log(this.movies);
     });
 
@@ -32,28 +30,14 @@ export class HomeComponent implements OnInit {
   }
 
   showMovie(movie:any) {
-    // localStorage.setItem("details", movie.id.toString());
-    // this.router.navigate(['details']);
     console.log('movie.id',movie.id);
-    // this.id = this.active.snapshot.params['id']
-    
-    // console.log(this.id)
     this.router.navigate([`/details/${movie.id}`])
   }
 
   searchMovie() {
-    // this.id = this.active.snapshot.params['id']
-    // console.log("movie id is"+ this.id);
-    // this.movieService.searchedMovie(this.findMovie).subscribe((data)=>{
-    // this.movies=JSON.parse(JSON.stringify(data));
-    // console.log(this.findMovie);
-    // })
-
     this.movieService.searchedMovie(this.findMovie).subscribe((movie) => {
-      this.movies = Object.values(movie)
-      // itemImageUrl = '../assets/phone.png';
-      // this.full_path = "https://image.tmdb.org/t/p/w500/" + this.poster_path;
-      console.log(this.findMovie);
+    this.movies = Object.values(movie)
+    console.log(this.findMovie);
     });
   }
 
