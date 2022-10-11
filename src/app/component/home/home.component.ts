@@ -11,7 +11,12 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class HomeComponent implements OnInit {
   
 
-  constructor(private movieService:MoviesService, private router:Router, private active:ActivatedRoute) { }
+  constructor(
+    private movieService:MoviesService, 
+    private router:Router, 
+    private active:ActivatedRoute
+    ) { }
+    
   movies: any = [];
   full_path: any;
   poster_path:any;
