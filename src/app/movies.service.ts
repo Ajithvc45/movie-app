@@ -21,6 +21,6 @@ export class MoviesService {
 
   searchedMovie(movie:any): Observable<Movie[]> {
     console.log(movie);
-    return this.http.get<Movie[]>(`https://api.themoviedb.org/3/search/company?api_key=2c7d2e78869ec86ee78d10bc69e698c9&query=${movie}&page=1`);
+    return this.http.get<Movie[]>(`https://api.themoviedb.org/3/search/movie?api_key=2c7d2e78869ec86ee78d10bc69e698c9&language=en-US&query=${movie}&page=1&include_adult=false`);
   }
 }

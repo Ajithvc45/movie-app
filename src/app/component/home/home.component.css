@@ -49,6 +49,10 @@
       margin-right: 10px;
     }
 
+    .searcBarContainer img {
+      cursor: pointer;
+    }
+
   .coverContainer img {
       width: 100%;
       background-size: cover;
