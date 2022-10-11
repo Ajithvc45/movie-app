@@ -26,7 +26,7 @@ export class DetailsComponent implements OnInit {
     this.id = this.active.snapshot.params['id']
     console.log("movie id is"+ this.id);
     this.movieService.singleMovie(this.id).subscribe((data)=>{
-      this.movieData=JSON.parse(JSON.stringify(data));
+    this.movieData=JSON.parse(JSON.stringify(data));
     })
   }
 

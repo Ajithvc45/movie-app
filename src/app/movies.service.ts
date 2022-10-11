@@ -18,4 +18,9 @@ export class MoviesService {
   singleMovie(id:any): Observable<Movie[]>{
     return this.http.get<Movie[]>("https://api.themoviedb.org/3/movie/"+ id +"?api_key=2c7d2e78869ec86ee78d10bc69e698c9&language=en-US");
   }
+
+  searchedMovie(movie:any): Observable<Movie[]> {
+    console.log(movie);
+    return this.http.get<Movie[]>(`https://api.themoviedb.org/3/search/company?api_key=2c7d2e78869ec86ee78d10bc69e698c9&query=${movie}&page=1`);
+  }
 }

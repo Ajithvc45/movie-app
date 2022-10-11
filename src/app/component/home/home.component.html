@@ -4,8 +4,8 @@
         <img src="/assets/logo.png"/>
       </div>
         <div class="searcBarContainer">
-            <input type="text" placeholder="search any movie"/>
-            <img src="/assets/searchIcon.png" alt="search">
+            <input type="text" placeholder="search any movie" [(ngModel)]="findMovie"/>
+            <img src="/assets/searchIcon.png" alt="search" (click)="searchMovie()">
             <div class="spinner">
             </div>
         </div>
