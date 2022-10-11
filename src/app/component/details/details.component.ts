@@ -42,22 +42,7 @@ export class DetailsComponent implements OnInit {
     const url=`https://www.youtube.com/embed/${this.movieTrailer.results[0].key}`;
     this.controllerSrc = this.sanitizer.bypassSecurityTrustResourceUrl(url);
     })
-    
-    // console.log(this.movie);
-    // console.log(this.movieData);
     });
-
-    // this.movie = this.active.snapshot.params['movie']
-    // this.movieService.getVideo(this.id).subscribe((movie) => {
-    // this.movieData = Object.values(movie)
-    // console.log(this.movieData)
-    // const url=`https://www.youtube.com/embed/${this.movieData}`;
-    // this.controllerSrc = this.sanitizer.bypassSecurityTrustResourceUrl(url);
-    // this.movie = this.id
-    // this.movieService.getVideo(this.id).subscribe((data)=> {
-    // this.movieData = JSON.parse(JSON.stringify(data));
-    
-    // })
   }
 
   backward() {
