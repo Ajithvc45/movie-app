@@ -53,6 +53,11 @@
       cursor: pointer;
     }
 
+    .searcBarContainer button {
+      padding: 8px;
+      margin-left: 15px;
+    }
+
   .coverContainer img {
       width: 100%;
       background-size: cover;
