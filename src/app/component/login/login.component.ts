@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   formGroup: FormGroup;
+  username: string;
+  password: string;
   // success:boolean;
   // formArray:any = FormArray;
   // success: boolean = false;
@@ -33,6 +35,13 @@ export class LoginComponent implements OnInit {
   loginProcess() {
     const username = this.formGroup.controls['username'];
     const password = this.formGroup.controls['password'];
+
+    if(username.value == "" && password.value == "") {
+      this.formGroup.setErrors({ errors: true });
+    }else if(username.value != "ajithvc45" && password.value != "Ajithvc45@") {
+      this.formGroup.setErrors({ unauthenticated: true });
+    }
+
     if(username.value === "ajithvc45" && password.value === "Ajithvc45@"){
       console.log("doneee",this.formGroup.value)
       this.authService.login(this.formGroup.value).subscribe(result => {
@@ -45,7 +54,9 @@ export class LoginComponent implements OnInit {
       })
     }else{
       console.log("nop",this.formGroup.value)
-      alert("Invalid Credentials")
+      // alert("Invalid Credentials")
+      // this.formGroup.value.setErrors({ check: true })
+      
       
     }
     console.log('------- this.formGroup:', this.formGroup.value)
