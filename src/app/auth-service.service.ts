@@ -18,8 +18,12 @@ export class AuthServiceService {
     return this.http.post(`https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key=2c7d2e78869ec86ee78d10bc69e698c9`,data = {
       username:"ajithvc45",
       password:"Ajithvc45@",
-      request_token: "9b0a9b4ed89993bdaa83cd9536cca2bbf4e3bb1b",
+      request_token: "c5d674efe912819acab561bf03663cb4db5fe615",
   });
     
+  } 
+
+  IsLoggedIn() {
+    return !!localStorage.getItem('formGroup');
   }
 }
