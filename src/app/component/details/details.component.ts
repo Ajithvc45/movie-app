@@ -39,10 +39,10 @@ export class DetailsComponent implements OnInit {
     });
   }
 
-  backward() {
-    localStorage.removeItem('details')
-    this.router.navigate(['']);
-  }
+  // backward() {
+  //   localStorage.removeItem('details')
+  //   this.router.navigate(['']);
+  // }
 
   getVideo() {
     console.log("helloo")

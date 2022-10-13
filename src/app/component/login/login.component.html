@@ -6,47 +6,36 @@
             <div class="card-body p-5 text-center">
   
               <div class="mb-md-5 mt-md-4 pb-5">
-                <form [formGroup]="formGroup" (ngSubmit)="loginProcess()">
+                <!-- <form #userlogin="ngForm" (ngSubmit)="userVerify()"></form> -->  <!-- Template-Driven -->
+                <form [formGroup]="formGroup" (ngSubmit)="loginProcess()">   <!-- Reactive Form -->
   
                     <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                     <p class="text-white-50 mb-5">Please enter your login and password!</p>
     
                     <div class="form-outline form-white mb-4">
+                                            <!-- Reactive form -->
                         <label class="form-label" for="typeEmailX">User Name</label>
                         <input type="email" id="typeEmailX" class="form-control form-control-lg" formControlName="username" />
-                        <div class="wrongMsg" *ngIf="formGroup.errors?.['errors']">
-                            User Name required
-                        </div> 
-                        <!-- <div class="wrongMsg" *ngIf="formGroup.errors?.['unauthenticated']">
-                            Username required.
-                        </div>                -->
-                        <!-- <span *ngIf="formGroup.submitted&&password.errors?.['required']">User name required</span> -->
-                        <!-- <div *ngIf="username.errors?.['required']">
-                            This field is required.
-                        </div> -->
+                        <div class="wrongMsg" *ngIf="formGroup.errors?.['errors']">User Name required</div> 
+                                            <!-- Template-Driven -->
+                    <!-- <input type="email" id="typeEmailX" name="something" #username="ngModel" class="form-control form-control-lg" [(ngModel)]="User.username" required/>
+                    <label class="text-danger" *ngIf="userlogin.submitted&&username.errors?.['required']">Email required</label> -->
                     </div>
     
                     <div class="form-outline form-white mb-4">
+                                            <!-- Reactive form -->
                         <label class="form-label" for="typePasswordX">Password</label>
                         <input type="password" id="typePasswordX" class="form-control form-control-lg" formControlName="password" />
-                        <div class="wrongMsg" *ngIf="formGroup.errors?.['errors']">
-                            Password required
-                        </div> 
-                        <div class="wrongMsg" *ngIf="formGroup.errors?.['unauthenticated']">
-                          Invalid Credentials
-                        </div> 
+                        <div class="wrongMsg" *ngIf="formGroup.errors?.['errors']">Password required</div> 
+                        <div class="wrongMsg" *ngIf="formGroup.errors?.['unauthenticated']">Invalid Credentials</div> 
+                                            <!-- Template-Driven -->
+                        <!-- <input type="password" name="some" id="typePasswordX" #password="ngModel" class="form-control form-control-lg" [(ngModel)]="User.password" required/>
+                        <label class="text-danger" *ngIf="userlogin.submitted&&password.errors?.['required']">Password required</label> -->
                     </div>
     
                     <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
     
                     <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-                    
-    
-                    <!-- <div class="d-flex justify-content-center text-center mt-4 pt-1">
-                    <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
-                    <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                    <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
-                    </div> -->
                 </form>
               </div>
   

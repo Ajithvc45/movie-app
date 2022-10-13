@@ -13,9 +13,19 @@ export class LoginComponent implements OnInit {
   password: string;
   constructor(private authService:AuthServiceService, private router:Router) { }
 
+  //  Template-driven
+
+  // User = {
+  //   username: '',
+  //   password: ''
+  // }
+
+
   ngOnInit(): void {
-    this.initForm(); 
+    this.initForm();         
   }
+
+  // Reactive Form 
 
   initForm() {
     this.formGroup = new FormGroup({
@@ -50,5 +60,19 @@ export class LoginComponent implements OnInit {
     console.log('------- this.formGroup:', this.formGroup.value)
     localStorage.setItem('formGroup', username.value);
   }
+
+  //Template-Driven
+
+  // userVerify() {
+  //   if(this.User.username == 'ajithvc45' && this.User.password == 'Ajithvc45@') {
+  //     console.log("doneeee", this.User)
+  //     this.authService.login(this.User).subscribe(result => {
+  //       console.log("got it from server", result)
+  //       this.router.navigate(['home']);
+  //     })
+  //   }else{
+  //     console.log("oopssss", this.User)
+  //   }
+  // }
 
 }
