@@ -12,7 +12,6 @@ import { Movie } from 'Movie';
 })
 export class DetailsComponent implements OnInit {
 
-  // movieData = new Movie('','')
   movieData: any = [];
   id: any;
   controllerSrc: any;
@@ -26,11 +25,6 @@ export class DetailsComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    // let id = localStorage.getItem(`details/${this.movieData.id}`);
-    // console.log('data got with id'+ id);
-    // this.movieService.singleMovie(id).subscribe((data)=>{
-    // this.movieData=JSON.parse(JSON.stringify(data));
-    // })
     this.id = this.active.snapshot.params['id']
     console.log("movie id is"+ this.id);
     this.movieService.singleMovie(this.id).subscribe((data)=>{

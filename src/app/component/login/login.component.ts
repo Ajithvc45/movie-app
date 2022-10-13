@@ -11,9 +11,6 @@ export class LoginComponent implements OnInit {
   formGroup: FormGroup;
   username: string;
   password: string;
-  // success:boolean;
-  // formArray:any = FormArray;
-  // success: boolean = false;
   constructor(private authService:AuthServiceService, private router:Router) { }
 
   ngOnInit(): void {
@@ -25,11 +22,6 @@ export class LoginComponent implements OnInit {
       username: new FormControl('',[Validators.required]),
       password: new FormControl('',[Validators.required])
     });
-
-    // this.formArray = new FormArray({
-    //   username: new FormArray('',[Validators.required]),
-    //   password: new FormArray('',[Validators.required])
-    // });
   }
 
   loginProcess() {
@@ -54,27 +46,8 @@ export class LoginComponent implements OnInit {
       })
     }else{
       console.log("nop",this.formGroup.value)
-      // alert("Invalid Credentials")
-      // this.formGroup.value.setErrors({ check: true })
-      
-      
     }
     console.log('------- this.formGroup:', this.formGroup.value)
-    // if (this.formGroup.valid) {
-    //   this.authService.login(this.formGroup.value).subscribe(result => 
-    //     if (result.success){
-    //       console.log("got it from server",this.formGroup.value) 
-          
-          
-    //       alert("you got ittttt"+ result.value);
-    //       this.router.navigate(['home'])
-    //     }else{
-    //       this.success = false;
-    //       alert("oopsss" + result.value)
-    //     }
-    //   })
-    // }
-
     localStorage.setItem('formGroup', username.value);
   }
 
