@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from 'Movie';
+import { Movie, MovieResponse } from 'Movie';
 import { MoviesService } from 'src/app/movies.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -8,9 +8,12 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
   
   collection = [];
+
+  
   
   constructor(
     private movieService:MoviesService, 
@@ -18,25 +21,38 @@ export class HomeComponent implements OnInit {
     private active:ActivatedRoute
     ) { }
     
-  movies: any = [];
-  full_path: any;
-  poster_path:any;
+  movies: Movie[];
+  // star = this.movies.vote_average;
+  // movieList:any;
+  // results :[];
+  // movieList : [];
+  // full_path: any;
+  // poster_path:any;
   id = " "
   findMovie = "";
-  list: any;
+  // list: any;
   page:number = 1;
-  totalItems: any;
-  itemsPerPage: any;
+  // totalItems: any;
+  // itemsPerPage: any;
+  starRating = 0;
+  currentRate:number;
+
+  
 
   ngOnInit(): void {
-    this.movieService.getMovies(this.page).subscribe((movie) => {
-      this.movies = Object.values(movie)
-      this.page =  0
+    this.movieService.getMovies(this.page).subscribe((movie:any) => {
+      console.log("this is movieeeee===============", movie)
+      this.movies = movie.results;
+      // this.movies = Object.values(movie)[1]
+      // this.movieList[1] = this.movies;
+      
+      this.page =  0;
       console.log('this.movies 1111', this.movies);
     });
   }
 
-  showMovie(movie:any) {
+  showMovie(movie:Movie) {
+    console.log("movieeee", movie)
     console.log('movie.id',movie.id);
     this.router.navigate([`/details/${movie.id}`])
   }
@@ -48,7 +64,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  gty(page:any) {
+  gty(page:number) {
     this.page = page
     this.movieService.getMovies(page).subscribe((movie) => {
       this.movies = Object.values(movie)

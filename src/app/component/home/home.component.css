@@ -256,3 +256,8 @@
     .pagination li a {
       padding: 5px;
     }
+
+    ngb-rating {
+      color: yellow;
+      font-size: 20px;
+    }

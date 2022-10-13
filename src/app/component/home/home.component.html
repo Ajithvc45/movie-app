@@ -40,7 +40,7 @@
                 </div>
                 <div class="cardsContainer">
                     <div class="movieList">
-                        <div class="linktag" *ngFor="let movie of movies[1] | paginate
+                        <div class="linktag" *ngFor="let movie of movies | paginate
                         : {
                             itemsPerPage: 20, currentPage: this.page, totalItems: 1000
                         }" (click)="showMovie(movie)">
@@ -52,10 +52,11 @@
                                     <div class="leftinfo">
 
                                         <h2>{{movie.original_title}}</h2>
+                                    <!-- <ngb-rating [max]=5 [(rate)]="starRating" [(rate)]="{{movie.title}}"></ngb-rating> -->
                                     </div>
                                 </div>
                                 <div class="rightinfo">
-                                    <img src="" alt="img"/>
+                                    <!-- <img src="" alt="img"/> -->
                                 </div>
                             </div>                            
                         </div>

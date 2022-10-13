@@ -13,8 +13,8 @@ import { Movie } from 'Movie';
 export class DetailsComponent implements OnInit {
 
   movieData: any = [];
-  id: any;
-  controllerSrc: any;
+  id: number;
+  controllerSrc: object;
   movieTrailer:any;
 
   constructor(
@@ -29,9 +29,11 @@ export class DetailsComponent implements OnInit {
     console.log("movie id is"+ this.id);
     this.movieService.singleMovie(this.id).subscribe((data)=>{
     this.movieData=JSON.parse(JSON.stringify(data));
+    console.log("movieeeee", typeof this.movieData)
 
     this.movieService.getVideo(this.id).subscribe((movie) => {
     this.movieTrailer=JSON.parse(JSON.stringify(movie));
+    console.log("trailerrrrr", typeof this.movieTrailer)
     console.log(this.movieTrailer.results[0].key);
     const url=`https://www.youtube.com/embed/${this.movieTrailer.results[0].key}`;
     this.controllerSrc = this.sanitizer.bypassSecurityTrustResourceUrl(url);
