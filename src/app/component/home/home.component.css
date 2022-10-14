@@ -226,6 +226,12 @@
     
   }
 
+  .star {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
   .ratingContainer p {
       /* font-family: $fontfamily; */
       font-style: normal;

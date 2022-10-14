@@ -1,3 +1,6 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
 <div class="headerContainer">
     <div class="content">
       <div class="logoContainer">
@@ -52,7 +55,11 @@
                                     <div class="leftinfo">
 
                                         <h2>{{movie.original_title}}</h2>
-                                    <!-- <ngb-rating [max]=5 [(rate)]="starRating" [(rate)]="{{movie.title}}"></ngb-rating> -->
+                                    <!-- <ngb-rating [max]=1 [readonly]="true" [(rate)]="movie.vote_average"><p>{{movie.vote_average/10}}</p></ngb-rating> -->
+                                    <div class="star">
+                                        <i class="fa fa-star" style="color: yellow"></i>
+                                        <p style="color: white">{{movie.vote_average}}/10</p>
+                                    </div>
                                     </div>
                                 </div>
                                 <div class="rightinfo">

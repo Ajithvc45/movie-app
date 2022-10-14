@@ -34,7 +34,6 @@ export class HomeComponent implements OnInit {
   page:number = 1;
   // totalItems: any;
   // itemsPerPage: any;
-  starRating = 0;
   currentRate:number;
 
   
@@ -49,7 +48,12 @@ export class HomeComponent implements OnInit {
       this.page =  0;
       console.log('this.movies 1111', this.movies);
     });
+
   }
+
+  // calculateStar() {
+  //   this.currentRate = this.starRating/2;
+  // }
 
   showMovie(movie:Movie) {
     console.log("movieeee", movie)
@@ -58,17 +62,19 @@ export class HomeComponent implements OnInit {
   }
 
   searchMovie() {
-    this.movieService.searchedMovie(this.findMovie).subscribe((movie) => {
-    this.movies = Object.values(movie)
+    this.movieService.searchedMovie(this.findMovie).subscribe((movie:any) => {
+    // this.movies = Object.values(movie)
+    this.movies = movie.results;
     console.log(this.findMovie);
     });
   }
 
   gty(page:number) {
     this.page = page
-    this.movieService.getMovies(page).subscribe((movie) => {
-      this.movies = Object.values(movie)
-      console.log('this.movies 222222222', this.movies);
+    this.movieService.getMovies(page).subscribe((movie:any) => {
+      // this.movies = Object.values(movie)
+      this.movies = movie.results;
+      console.log('this.movies 222222222', movie);
     });
   }
 
