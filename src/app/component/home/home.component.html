@@ -45,7 +45,7 @@
                     <div class="movieList">
                         <div class="linktag" *ngFor="let movie of movies | paginate
                         : {
-                            itemsPerPage: 20, currentPage: this.page, totalItems: 1000
+                            itemsPerPage: 20, currentPage: this.page, totalItems: this.totalItems
                         }" (click)="showMovie(movie)">
                             <div class="card" >
                                 <!-- <img src="{imageBaseUrl + data.backdrop_path}" alt=""/> -->

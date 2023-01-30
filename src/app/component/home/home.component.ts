@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
   findMovie = "";
   // list: any;
   page:number = 1;
-  // totalItems: any;
+  totalItems: number;
   // itemsPerPage: any;
   currentRate:number;
 
@@ -40,7 +40,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.movieService.getMovies(this.page).subscribe((movie:any) => {
-      console.log("this is movieeeee===============", movie)
+      console.log("this is movieeeee===============", movie);
+      this.totalItems = movie.total_results;
       this.movies = movie.results;
       // this.movies = Object.values(movie)[1]
       // this.movieList[1] = this.movies;
